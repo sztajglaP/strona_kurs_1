@@ -17,3 +17,137 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
 }
+
+// NAV
+.burger-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1em;
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 1000;
+
+    &:focus {
+        outline: none;
+        border: 1px solid rgba(255, 255, 255, .5);
+        border-radius: 8px;
+    }
+
+    &:hover {
+        .burger-btn__bars::after, .burger-btn__bars::before {
+            width: 100%;
+        }
+    }
+
+    &__box {
+        position: relative;
+        width: 40px;
+        height: 30px;
+    }
+
+    &__bars, &__bars::before, &__bars::after {
+        @include burgerBtn;
+    }
+
+    &__bars {
+        width: 100%;
+
+        &::after {
+            top: 13px;
+            width: 60%;
+        }
+
+        &::before {
+            top: 27px;
+            width: 30%;
+        }
+    }
+}
+
+// HEADER
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    height: 75vh;
+    text-align: center;
+    color: $pure-white;
+    @include heroImages('../img/header-img-small.jpg');
+    background-attachment: scroll;
+
+    &__heading {
+        font-family: 'Dancing Script', cursive;
+        font-size: 4.8rem;
+        font-weight: 300;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+    }
+
+    &__btn {
+        margin-top: 2em;
+        padding: 0.8em 1.6em;
+        font-size: 1.4rem;
+        background: $pure-white;
+        border: none;
+        border-radius: 8px;
+        color: $dark;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &::before {
+            background-color: $light-white;
+        }
+    }
+}
+
+
+
+
+
+// ==============
+// MEDIA
+// ==============
+
+@media(min-width: 768px) {
+    .white-block {
+        height: 50px;
+        width: 80%;
+    }
+
+    .header {
+        &__heading {
+            font-size: 6.6rem;
+        }
+
+        &__text {
+            font-size: 2.2rem;
+        }
+
+        &__btn {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .burger-btn {
+        top: 50px;
+        right: 50px;
+    }
+
+    .header {
+        background-image: $blue-gradient, url('../img/header-img-big.jpg');
+
+        &__headign  {
+            font-size: 10rem;
+        }
+    }
+}
