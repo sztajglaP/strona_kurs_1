@@ -126,6 +126,93 @@ body {
   width: 30%;
 }
 
+.nav {
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  background-image: linear-gradient(45deg, #1469f1, #2a0ab8);
+  z-index: 100;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1), -webkit-transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.nav--active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.nav__item {
+  position: relative;
+  display: block;
+  margin: 0.5em, 0;
+  padding: 0.5em 2em;
+  font-size: 2.8rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  background-color: #fff;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.nav__item:hover::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+@-webkit-keyframes navItemsAnimation {
+  from {
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes navItemsAnimation {
+  from {
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.nav-items-animation {
+  -webkit-animation: navItemsAnimation 1s both;
+          animation: navItemsAnimation 1s both;
+}
+
 .header {
   position: relative;
   display: -webkit-box;
