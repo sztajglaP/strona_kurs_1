@@ -323,6 +323,28 @@ body {
   font-size: 1.4rem;
 }
 
+.hero-img {
+  position: relative;
+  padding: 10em 2em;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/hero-img-small.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-img__title {
+  margin-bottom: 0.5em;
+  font-family: 'Dancing Script', cursive;
+  font-size: 4.8rem;
+}
+
+.hero-img__text {
+  padding: 1em 0;
+}
+
 @media (min-width: 576px) {
   .dreams__box {
     -webkit-box-orient: horizontal;
@@ -366,6 +388,16 @@ body {
   .dreams__text {
     font-size: 1.8rem;
   }
+  .hero-img {
+    padding: 30rem auto;
+  }
+  .hero-img hr {
+    margin: 0 auto;
+    width: 70%;
+  }
+  .hero-img__text {
+    font-size: 2.2rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -403,6 +435,17 @@ body {
   }
   .dreams__text {
     font-size: 2.2rem;
+  }
+  .hero-img {
+    padding: 40rem 2em;
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/hero-img-big.jpg");
+  }
+  .hero-img__title {
+    font-size: 7.2rem;
+  }
+  .hero-img hr {
+    width: 60%;
+    max-width: 900px;
   }
 }
 /*# sourceMappingURL=style.css.map */
