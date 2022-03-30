@@ -211,6 +211,126 @@ body {
     }
 }
 
+// SECTION ISLANDS
+.islands {
+    &__card {
+        position: relative;
+        margin: 1em 0;
+        height: 450px;
+        text-align: center;
+        color: $pure-white;
+        perspective: 1000px;
+
+        &:hover {
+            .islands__card-img {
+                transform: rotateY(-180deg);
+                opacity: 0;
+            }
+
+            .islands__card-info {
+                transform: rotateY(0);
+                opacity: 1;
+            }
+        }
+    }
+
+    &__card-img {
+        padding: 2em;
+        height: 100%;
+        border-radius: 8px;
+        background-size: cover;
+        background-position: center;
+        transition: transform 1s, opacity 1s;
+
+        &--first {
+            background-image: $light-blue-gradient, url('../img/section-island-img-one.jpg');
+        }
+
+        &--second {
+            background-image: $blue-gradient, url('../img/section-island-img-two.jpg');
+        }
+
+        &--third {
+            background-image: $purple-gradient, url('../img/section-island-img-three.jpg');
+        }
+    }
+
+    &__card-img-title {
+        font-family: 'Dancing Script', cursive;
+        font-size: 2.8rem;
+    }
+
+    &__card-img-info {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        font-size: 1.8rem; 
+        
+        i {
+            margin-right: 0.3em;
+        }
+    }
+
+    &__card-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: $light-blue-gradient-solid;
+        border-radius: 8px;
+        opacity: 0;
+        transform: rotateY(180deg);
+        transition: transform 1s, opacity 1s;
+    }
+
+    &__card-info-title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.2em;
+        font-family: 'Dancing Script', cursive;
+        font-size: 2.8rem;
+    }
+
+    &__card-info-list {
+        margin: 0 auto;
+        width: 70%;
+        list-style: none;
+    }
+
+    &__card-info-list-item {
+        padding: 1em;
+        font-size: 1.4rem;
+        border-bottom: 1px solid $light-white;
+    }
+
+    &__card-info-list-item:last-child {
+        border-bottom: none;
+    }
+
+    &__card-info-btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2em;
+        padding: 1em;
+        border-radius: 8px;
+        width: 80%;
+        border: none;
+        background-color: $green-color;
+        cursor: pointer;
+
+        &::before {
+            background-color: $green-color-hover;
+        }
+    }
+
+}
+
 
 
 
@@ -285,6 +405,19 @@ body {
             font-size: 2.2rem;
         }
     }
+
+    .islands {
+        &__cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        &__card {
+            margin: 1em;
+            width: 45%;
+        }
+    }
 }
 
 @media(min-width: 992px) {
@@ -342,4 +475,12 @@ body {
         }
     }
 
+}
+
+@media(min-width: 1100px) {
+    .islands {
+        &__card {
+            width: 30%;
+        }
+    }
 }
