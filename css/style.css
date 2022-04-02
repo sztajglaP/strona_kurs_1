@@ -478,6 +478,73 @@ body {
   background-color: #0fe29c;
 }
 
+.offers {
+  position: relative;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/offers-hero-small.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.offers .section-heading {
+  color: #fff;
+}
+
+.offers__option {
+  margin: 1em 0;
+  -webkit-box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+          box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.offers__option-img {
+  width: 100%;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.offers__option-img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.offers__option-info {
+  padding: 2em;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.offers__option-heading {
+  margin-bottom: 0.5em;
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.offers__option-text {
+  margin-bottom: 0.5em;
+  font-size: 1.3rem;
+  color: #2e2e2e;
+}
+
+.offers__option-btn {
+  margin-top: 1em;
+  padding: 0.8em;
+  width: 100%;
+  color: #fff;
+  background-color: #1755e7;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.offers__option-btn::before {
+  background-color: #164dcc;
+}
+
 @media (min-width: 576px) {
   .dreams__box {
     -webkit-box-orient: horizontal;
@@ -501,6 +568,41 @@ body {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+  }
+  .offers__option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2em 0;
+    width: 100%;
+  }
+  .offers__option-img {
+    width: 50%;
+    height: auto;
+  }
+  .offers__option-img--right {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .offers__option-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .offers__option-heading {
+    margin-bottom: 0.5em;
+    font-size: 3.6rem;
+  }
+  .offers__option-btn {
+    padding: 1em;
   }
 }
 
@@ -593,6 +695,17 @@ body {
   .hero-img hr {
     width: 60%;
     max-width: 900px;
+  }
+  .offers {
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/offers-hero-big.jpg");
+  }
+  .offers__option-img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 300px;
+  }
+  .offers__option-text {
+    font-size: 1.5rem;
   }
 }
 
